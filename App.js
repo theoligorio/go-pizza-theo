@@ -1,21 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { ThemeProvider } from "styled-components/native";
+import * as SplashScreen from "expo-splash-screen";
+import theme from "./src/global/Styles/theme";
+// import { Splash } from "./src/Screens/Splash";
+// import { SignIn } from "./src/Screens/SignIn";
+// import { Requests } from "./src/Screens/Requests";
+
+import { Routes } from './src/routes';
+
+import {
+  useFonts,
+  DMSerifDisplay_400Regular,
+  DMSerifDisplay_400Regular_Italic,
+} from "@expo-google-fonts/dm-serif-display";
+import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
+import {
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_700Bold,
+} from "@expo-google-fonts/inter";
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    DMSerifDisplay_400Regular,
+    DMSerifDisplay_400Regular_Italic,
+    DMSans_400Regular,
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_700Bold,
+  });
+  if (!fontsLoaded) return null;
+
+  SplashScreen.hideAsync();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <Routes/>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
