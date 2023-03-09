@@ -3,9 +3,10 @@ import { FlatList, Pressable } from "react-native";
 import { data } from "../../Utils/flavourPizzas";
 import { Card } from "../../Components/OrderCard";
 import { ItemSeparator } from "../../Components/ItemSeparator";
+// import { Header } from "../../Components/Header";
 import { TabsBar } from "../../Components/TabsBar";
 import { ReturnSignInButton } from "../../Components/ReturnSignInButton";
-import { Container, Icon, IconAreaButton, Text, Header } from "./Styles";
+import { Container, Icon, IconAreaButton, Text, Header} from "./Styles";
 import { useNavigation } from "@react-navigation/native";
 
 export function Requests() {
@@ -14,10 +15,10 @@ export function Requests() {
   return (
     <Container>
       <Header>
-        {/* <ReturnSignInButton name={"chevron-left"} /> */}
+        <ReturnSignInButton name={"chevron-left"} />
         <Text>Pedidos feitos</Text>
       </Header>
-      <Header />
+      {/* <Header /> */}
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}

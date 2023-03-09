@@ -14,14 +14,16 @@ export const Header = styled(LinearGradient).attrs({
   start: { x: 0, y: 1 },
   end: { x: 1, y: 0 },
 })`  
+    flex-direction: row
     width: 100%;
-    height: ${RFValue(50)}px;
+    height: ${RFValue(120)}px;
     align-items: center;
     justify-content: flex-end;
   `;
 export const Text = styled.Text`
   color: ${( {theme} ) => theme.COLORS.SHAPE};
   margin-top: ${RFValue(24)}px;
+  margin-right: ${RFValue(90)}px;
   font-size: ${RFValue(24)};
   font-family: ${( {theme} ) => theme.FONTS.TITLE};
 `;

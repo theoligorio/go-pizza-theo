@@ -4,15 +4,14 @@ import styled from "styled-components/native";
 import { Feather } from '@expo/vector-icons';
 
 export const Container = styled(TouchableOpacity)`
+  flex: 1;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  margin-top: 32px;
+  margin-left: 30px;
   width: 50px;
   height: 50px;
-  background-color: ${( {theme} ) => theme.COLORS.PRIMARY_900};
-  border: 0.5px solid ${({theme}) => theme.COLORS.SHAPE};
-  border-radius: 12px;
 `;
-
 
 export const Icon = styled(Feather)`
   font-size: ${RFValue(25)}px;
